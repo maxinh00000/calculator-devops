@@ -36,8 +36,10 @@ done
 
 echo "Bringing up the rest of the stack (proxy) ..."
 $COMPOSE up -d --remove-orphans
+# Recreate the proxy so it always loads the nginx.conf from this checkout
+# (a single-file bind mount keeps pointing at the old file after git replaces it).
+# Takes ~1s; the API replicas keep running.
+$COMPOSE up -d --no-deps --force-recreate nginx
 wait_healthy nginx
-# Make Nginx re-resolve backend IPs immediately (belt and braces with `resolve`)
-$COMPOSE exec -T nginx nginx -s reload
 
 $COMPOSE ps
