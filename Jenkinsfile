@@ -13,7 +13,7 @@ pipeline {
         DOCKERHUB_USER = 'maxinh0'                 // <-- your Docker Hub username (lowercase)
         IMAGE_NAME     = "${DOCKERHUB_USER}/calculator"
         IMAGE_TAG      = "${env.BUILD_NUMBER}"
-        NOTIFY_EMAIL   = 'taral.sanka@gmail.com'      // <-- where build status mails go
+        NOTIFY_EMAIL   = 'thrivedhundi5@gmail.com'      // <-- where build status mails go
         APP_URL        = 'http://localhost:8085'
     }
 
