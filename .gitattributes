@@ -1,0 +1,6 @@
+# Force LF line endings so shell scripts and configs work on the Linux VM
+# even when the repo is committed from Windows.
+* text=auto eol=lf
+*.sh text eol=lf
+*.jar binary
+*.png binary
