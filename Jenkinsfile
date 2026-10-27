@@ -39,9 +39,23 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn -B clean package -DskipTests'
-            }
+                sh '''
+                export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+                export PATH="$JAVA_HOME/bin:$PATH"
+
+                echo "Java version:"
+                java -version
+
+                echo "Java compiler version:"
+                javac -version
+
+                echo "Maven Java configuration:"
+                mvn -version
+
+                mvn -B clean package -DskipTests
+            '''
         }
+}
 
         stage('Test') {
             steps {
