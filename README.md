@@ -1,11 +1,11 @@
-# Calculator DevOps — CSE 816 SPE Mini-Project
+# Calculator DevOps
 
 A Calculator REST API in **Java 17 / Spring Boot 3** with a fully automated CI/CD pipeline:
 **GitHub → Jenkins → Maven (build + JUnit) → Docker → Docker Hub → Docker Compose (2 replicas + Nginx)**.
 
 - Docker Hub image: `https://hub.docker.com/r/maxinh0/calculator`
 - GitHub: `https://github.com/maxinh00000/calculator-devops`
-- Author: Taral Sanka (IMT2023588)
+- Author: Undi Trivedh Venkata Sai(IMT2023002)
 
 ## Architecture
 
